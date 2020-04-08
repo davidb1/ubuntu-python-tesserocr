@@ -1,0 +1,17 @@
+gunicorn
+gevent
+flask
+pillow
+opencv-contrib-python
+google-cloud-vision
+google-api-python-client
+numpy==1.16.4
+imagehash
+matplotlib
+scikit-image==0.14.2
+scipy==1.2.1
+tensorflow==1.14.0
+alphabet_detector
+intervaltree
+shapely
+tesserocr

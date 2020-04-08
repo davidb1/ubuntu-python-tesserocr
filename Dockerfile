@@ -49,5 +49,8 @@ RUN apt-get update && apt-get install -y \
 WORKDIR /usr/share/tesseract-ocr/5/tessdata/
 RUN wget -O jpn_vert.traineddata "https://github.com/zodiac3539/jpn_vert/raw/master/jpn_ver5.traineddata" 
 
+COPY requirements.txt /tmp
+WORKDIR /tmp
+
 # Install requirements
 RUN pip3 --no-cache-dir install -r requirements.txt 

@@ -8,9 +8,11 @@ RUN apt-get install -y curl python3.7 python3.7-dev
 
 # Register the version in alternatives
 RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.7 1
+RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
 
 # Set python 3 as the default python
 RUN update-alternatives --set python /usr/bin/python3.7
+RUN update-alternatives --set python3 /usr/bin/python3.7
 
 # Upgrade pip to latest version
 RUN apt-get install -y python3-pip 

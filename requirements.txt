@@ -1,6 +1,5 @@
 gunicorn
-gevent
-flask
+aiohttp
 pillow
 opencv-contrib-python
 google-cloud-vision

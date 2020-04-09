@@ -13,6 +13,8 @@ RUN update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.7 1
 # Set python 3 as the default python
 RUN update-alternatives --set python /usr/bin/python3.7
 RUN update-alternatives --set python3 /usr/bin/python3.7
+RUN update-alternatives --config python3
+RUN update-alternatives --config python
 
 # Upgrade pip to latest version
 RUN curl -s https://bootstrap.pypa.io/get-pip.py -o get-pip.py && \
@@ -25,6 +27,9 @@ ARG DEBIAN_FRONTEND=noninteractive
 
 # get add-apt-repository
 RUN apt-get update && apt-get install -y software-properties-common
+
+RUN cp /usr/lib/python3/dist-packages/apt_pkg.cpython-36m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/apt_pkg.so
+RUN cp /usr/lib/python3/dist-packages/gi/_gi.cpython-36m-x86_64-linux-gnu.so /usr/lib/python3/dist-packages/gi/_gi.cpython-37m-x86_64-linux-gnu.so
 
 # add tesseract 5 and python repositories
 RUN add-apt-repository ppa:alex-p/tesseract-ocr-devel

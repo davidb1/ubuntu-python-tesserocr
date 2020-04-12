@@ -1,6 +1,6 @@
 gunicorn
 aiohttp
-pillow
+pillow==6.2.2
 opencv-contrib-python
 google-cloud-vision
 google-api-python-client

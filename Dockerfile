@@ -33,7 +33,15 @@ RUN apt-get update && apt-get install -y \
 
 # Get tessdata
 WORKDIR /usr/share/tesseract-ocr/5/tessdata/
-RUN wget -O jpn_vert.traineddata "https://github.com/zodiac3539/jpn_vert/raw/master/jpn_ver5.traineddata" 
+
+RUN wget -q --show-progress --progress=bar:force:noscroll -O manga_jpn_vert.traineddata "https://github.com/zodiac3539/jpn_vert/raw/master/jpn_ver5.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O chi_tra.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/chi_tra.traineddata"  \
+    && wget -q --show-progress --progress=bar:force:noscroll -O chi_tra_vert.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/chi_tra_vert.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O jpn.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/jpn.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O jpn_vert.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/jpn_vert.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O kor_vert.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/kor_vert.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O eng.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/eng.traineddata" \
+    && wget -q --show-progress --progress=bar:force:noscroll -O osd.traineddata "https://github.com/tesseract-ocr/tessdata/raw/master/osd.traineddata"
 
 COPY requirements.txt /tmp
 WORKDIR /tmp

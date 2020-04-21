@@ -16,17 +16,15 @@ RUN apt-get update -oAcquire::AllowInsecureRepositories=true
 RUN apt-get install -y --allow-unauthenticated notesalexp-keyring -oAcquire::AllowInsecureRepositories=true
 RUN apt-get update -y && apt-get -y upgrade
 
-# Install tesseract 5 
-
 # install apt-get requirements
 RUN apt-get update && apt-get install -y \
     libsm6 \
     libxrender1 \
     libfontconfig1 \
     libice6 \
+	tesseract-ocr \
     libleptonica-dev=1.79.0-1 \
-    libtesseract-dev=4.1.1-2 \
-    tesseract-ocr \
+    libtesseract-dev \
     pkg-config \
     python-skimage \
     && rm -rf /var/lib/apt/lists/* \

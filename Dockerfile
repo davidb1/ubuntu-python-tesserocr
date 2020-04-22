@@ -8,8 +8,8 @@ RUN apt-get install -y apt-transport-https wget
 
 # Add source for tesseract 5
 RUN echo "deb https://notesalexp.org/tesseract-ocr-dev/buster/ buster main" >> /etc/apt/sources.list
-# Add source for libleptonica-dev 1.79(sid)
-RUN echo "deb http://ftp.de.debian.org/debian sid main" >> /etc/apt/sources.list
+# Add source for libleptonica-dev 1.76
+RUN echo "deb http://ftp.de.debian.org/debian buster main" >> /etc/apt/sources.list
 
 # Fetch and install the GnuPG key
 RUN apt-get update -oAcquire::AllowInsecureRepositories=true
@@ -22,8 +22,8 @@ RUN apt-get update && apt-get install -y \
     libxrender1 \
     libfontconfig1 \
     libice6 \
-	tesseract-ocr \
-    libleptonica-dev=1.79.0-1 \
+    tesseract-ocr \
+    libleptonica-dev=1.76.0-1 \
     libtesseract-dev \
     pkg-config \
     python-skimage \

@@ -3,8 +3,6 @@ aiohttp
 pillow
 tensorflow
 opencv-contrib-python
-google-cloud-vision
-google-api-python-client
 numpy
 imagehash
 matplotlib
@@ -14,6 +12,5 @@ alphabet_detector
 intervaltree
 shapely
 tesserocr
-sentry-sdk==0.14.3
 aiocontextvars
 python-json-logger
